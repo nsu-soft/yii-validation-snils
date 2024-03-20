@@ -70,7 +70,7 @@ class SnilsValidator extends Validator
      * @param string $snils
      * @return int
      */
-    public function calculateCheckSum(string $snils): int
+    private function calculateCheckSum(string $snils): int
     {
         $sum = 0;
 
