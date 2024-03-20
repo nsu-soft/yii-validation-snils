@@ -3,7 +3,7 @@
 
 namespace nsusoft\validators;
 
-use app\validators\assets\snils\SnilsValidationAsset;
+use nsusoft\validators\assets\SnilsValidationAsset;
 use Yii;
 use yii\helpers\Json;
 use yii\validators\Validator;
