@@ -1,34 +1,52 @@
 {
-  "name": "nsu-soft/yii-validation-snils",
-  "description": "SNILS validator for Yii 2 Framework",
-  "keywords": ["yii2", "snils", "validator", "validation", "document", "russia"],
-  "version": "0.1",
-  "type": "library",
-  "license": "BSD-3-Clause",
-  "support": {
-    "issues": "https://github.com/nsu-soft/yii-validation-snils/issues?state=open",
-    "source": "https://github.com/nsu-soft/yii-validation-snils"
-  },
-  "minimum-stability": "stable",
-  "prefer-stable": true,
-  "require": {
-    "php": ">=7.2",
-    "yiisoft/yii2": "~2.0.49"
-  },
-  "autoload": {
-    "psr-4": {
-      "nsusoft\\validators\\": "src/"
+    "name": "nsu-soft/yii-validation-snils",
+    "description": "SNILS validator for Yii 2 Framework",
+    "keywords": [
+        "yii2",
+        "snils",
+        "validator",
+        "validation",
+        "document",
+        "russia"
+    ],
+    "version": "0.1",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/nsu-soft/yii-validation-snils/issues?state=open",
+        "source": "https://github.com/nsu-soft/yii-validation-snils"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.0",
+        "yiisoft/yii2": "~2.0.49"
+    },
+    "require-dev": {
+        "codeception/codeception": "^5.1",
+        "codeception/module-asserts": "*",
+        "codeception/module-yii2": "^1.1",
+        "codeception/module-phpbrowser": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "nsusoft\\validators\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
     }
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
-    }
-  ],
-  "config": {
-    "allow-plugins": {
-      "yiisoft/yii2-composer": true
-    }
-  }
 }
