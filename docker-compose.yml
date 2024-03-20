@@ -1,0 +1,6 @@
+services:
+  php:
+    image: php:7.2-fpm-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
