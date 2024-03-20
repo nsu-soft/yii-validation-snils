@@ -53,28 +53,32 @@ class SnilsValidator extends Validator
     /**
      * @inheritDoc
      */
-    public function validateAttribute($model, $attribute): void
+    public function validateValue($value): ?array
     {
-        $snils = (string)$model->$attribute;
-
-        if (!preg_match('/^\d{11}$/', $snils)) {
-            $this->addError($model, $attribute, $this->message);
-            return;
+        if (!preg_match('/^\d{11}$/', $value)) {
+            return [$this->message, []];
         }
 
+        if ($this->calculateCheckSum($value) !== (int)substr($value, -2)) {
+            return [$this->message, []];
+        }
+
+        return null;
+    }
+
+    /**
+     * @param string $snils
+     * @return int
+     */
+    public function calculateCheckSum(string $snils): int
+    {
         $sum = 0;
 
         for ($i = 0; $i < 9; $i++) {
             $sum += substr($snils, $i, 1) * (9 - $i);
         }
 
-        $checkSum = $sum % 101 % 100;
-
-        if ($checkSum === (int)substr($snils, -2)) {
-            return;
-        }
-
-        $this->addError($model, $attribute, $this->message);
+        return $sum % 101 % 100;
     }
 
     /**
