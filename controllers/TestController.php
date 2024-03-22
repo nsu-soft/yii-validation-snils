@@ -20,7 +20,7 @@ class TestController extends Controller
             return $this->redirect(['success']);
         }
 
-        return $this->render('index');
+        return $this->render('index', ['model' => $model]);
     }
 
     public function actionSuccess(): string

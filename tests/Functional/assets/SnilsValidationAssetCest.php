@@ -11,10 +11,9 @@ class SnilsValidationAssetCest
     {
     }
 
-    // tests
     public function assetIsRegistered(FunctionalTester $I): void
     {
-        $I->amOnPage('test/index');
+        $I->amOnPage('index-test.php?r=test/index');
         $I->seeInSource('snils.validation.js');
     }
 }

@@ -8,9 +8,9 @@ use yii\base\Model;
 class SnilsForm extends Model
 {
     /**
-     * @var string
+     * @var string|null
      */
-    public string $snils;
+    public ?string $snils = null;
 
     /**
      * @return array[]

@@ -13,7 +13,7 @@ return [
     'language' => 'en-US',
     'components' => [
         'assetManager' => [
-            'basePath' => __DIR__ . '/../web/assets',
+            'basePath' => dirname(__DIR__) . '/web/assets',
         ],
         'urlManager' => [
             'showScriptName' => true,
