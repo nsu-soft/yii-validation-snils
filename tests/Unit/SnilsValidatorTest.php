@@ -6,6 +6,7 @@ namespace Tests\Unit;
 use Codeception\Test\Unit;
 use nsusoft\validators\SnilsValidator;
 use Tests\Support\UnitTester;
+use Tests\Unit\fixtures\SnilsFixture;
 
 class SnilsValidatorTest extends Unit
 {
@@ -15,10 +16,16 @@ class SnilsValidatorTest extends Unit
     {
     }
 
-    public function testValidationSuccess(): void
+    public function _fixtures(): array
+    {
+        return ['snils' => SnilsFixture::class];
+}
+
+    public function testValidationSuccess(UnitTester $I): void
     {
         $validator = new SnilsValidator();
-        $this->assertTrue($validator->validate('72340627370'));
+        $snils = $I->grabFixture('snils', 'correctSnils');
+        $this->assertTrue($validator->validate($snils['value']));
     }
 
     public function testValidationError(): void
