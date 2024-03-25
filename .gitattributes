@@ -1,0 +1,11 @@
+/bin export-ignore
+/config export-ignore
+/controllers export-ignore
+/forms export-ignore
+/tests export-ignore
+/views export-ignore
+/web export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/*.yml export-ignore
+/*.md export-ignore
