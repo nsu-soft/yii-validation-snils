@@ -3,6 +3,7 @@
 namespace app\forms;
 
 use nsusoft\validators\SnilsValidator;
+use Yii;
 use yii\base\Model;
 
 class SnilsForm extends Model
@@ -13,12 +14,22 @@ class SnilsForm extends Model
     public ?string $snils = null;
 
     /**
-     * @return array[]
+     * @inheritDoc
      */
     public function rules(): array
     {
         return [
             [['snils'], SnilsValidator::class],
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function attributeLabels(): array
+    {
+        return [
+            'snils' => Yii::t('app', "SNILS"),
         ];
     }
 
