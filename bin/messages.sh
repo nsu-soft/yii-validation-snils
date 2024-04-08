@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./yii.sh message /app/config/i18n.php
+./yii.sh message /var/www/html/config/i18n.php
